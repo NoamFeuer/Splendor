@@ -17,15 +17,14 @@ void Draw(std::vector<Card> cards)
 
 int main()
 {
+	InitWindow(800, 600, "Splendor");
+
+	Texture2D cardTexture = LoadTexture("./Assets/Card1.png");
 	std::vector<Card> cards = 
 	{
-		Card("Ring", {100, 100}),
-		Card("Neclace", {250, 100}),
-		Card("Earring", {400, 100}),
-		Card("Ultimate Cat Card", {550, 100})
+		Card(cardTexture, {100, 100}),
+		Card(cardTexture, {400, 100})
 	};
-
-	InitWindow(800, 600, "Splendor");
 
 	while (!WindowShouldClose())
 	{
@@ -34,6 +33,7 @@ int main()
 		Draw(cards);
 	}
 
+	UnloadTexture(cardTexture);
 	CloseWindow();
 
 	return 0;

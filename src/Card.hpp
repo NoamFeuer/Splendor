@@ -7,11 +7,11 @@
 class Card
 {
 	private:
-		std::string name;
+		Texture2D texture;
 		Vector2 position;
 
 	public:
-		Card(const std::string& cardName, Vector2 position);
+		Card(const Texture2D texture, Vector2 position);
 		~Card();
 		void Draw();
 };

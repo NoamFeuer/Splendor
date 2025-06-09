@@ -2,19 +2,18 @@
 #include "raylib.h"
 #include <iostream>
 
-Card::Card(const std::string& cardName, Vector2 cardPosition)
-	: name(cardName), position(cardPosition)
+Card::Card(const Texture2D cardTexture, Vector2 cardPosition)
+	: texture(cardTexture), position(cardPosition)
 {
-	std::cout << "Card created: " << name << std::endl;
+	std::cout << "Card created" << std::endl;
 }
 
 Card::~Card()
 {
-	std::cout << "Card destroyed: " << name << std::endl;
+	std::cout << "Card destroyed" << std::endl;
 }
 
 void Card::Draw()
 {
-	DrawRectangle((int)position.x, (int)position.y, 100, 150, LIGHTGRAY);
-	DrawText(name.c_str(), (int)position.x + 10, (int)position.y + 10, 20, BLACK);
+	DrawTextureV(texture, position, WHITE);
 }
