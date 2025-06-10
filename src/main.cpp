@@ -18,7 +18,12 @@ void Draw(std::vector<Card> &cards)
 
 int main()
 {
-	InitWindow(800, 600, "Splendor");
+	int screenWidth = GetMonitorWidth(0);
+	int screenHeight = GetMonitorHeight(0);
+
+	InitWindow(screenWidth, screenHeight, "Splendor");
+
+	ToggleFullscreen();
 
 	Texture2D cardTexture = LoadTexture("./Assets/Card1.png");
 	std::vector<Card> cards = 
