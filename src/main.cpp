@@ -1,11 +1,12 @@
 #include "raylib.h"
 #include "Card.hpp"
+#include "Token.hpp"
 #include <vector>
 
-void Draw(std::vector<Card> cards)
+void Draw(std::vector<Card> &cards)
 {
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
+	ClearBackground(BLACK);
 
 	for (Card& card : cards)
 	{
@@ -22,13 +23,12 @@ int main()
 	Texture2D cardTexture = LoadTexture("./Assets/Card1.png");
 	std::vector<Card> cards = 
 	{
-		Card(cardTexture, {100, 100}),
-		Card(cardTexture, {400, 100})
+		Card(cardTexture, {White, Blue, Blue, Blue, Blue, Green, Green}, {100, 100})
 	};
 
 	while (!WindowShouldClose())
 	{
-		// logic here
+		// logic
 
 		Draw(cards);
 	}

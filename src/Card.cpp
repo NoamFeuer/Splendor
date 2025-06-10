@@ -2,8 +2,8 @@
 #include "raylib.h"
 #include <iostream>
 
-Card::Card(const Texture2D cardTexture, Vector2 cardPosition)
-	: texture(cardTexture), position(cardPosition)
+Card::Card(const Texture2D& cardTexture, std::vector<Token> cardCost, Vector2 cardPosition)
+	: texture(cardTexture), position(cardPosition), cost(cardCost)
 {
 	std::cout << "Card created" << std::endl;
 }
