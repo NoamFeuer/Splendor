@@ -9,15 +9,15 @@ class Card
 {
 	private:
 		Texture2D texture;
-		Vector2 position;
 		std::vector<Token> cost;
 
 	public:
-		Card(const Texture2D& texture, std::vector<Token> cost, Vector2 position);
-
+		Card(const Texture2D& texture, std::vector<Token> cost, int tier);
 		~Card();
 
-		void Draw();
+		void Draw(Vector2 position);
+
+		int tier;
 };
 
 #endif
