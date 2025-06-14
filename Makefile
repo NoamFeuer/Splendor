@@ -1,9 +1,9 @@
 NAME = splendor
 CXX = c++
-CXXFLAGS = -std=c++17 -Wall -Wextra -Werror -O2
+CXXFLAGS = -Wall -Wextra -Werror -O2
 LDFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
-SRCS = src/main.cpp src/Card.cpp
+SRCS = src/main.cpp src/Card/Card.cpp src/Player.cpp src/Card/CardHandler.cpp
 
 OBJ_DIR = obj
 OBJS = $(patsubst src/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
